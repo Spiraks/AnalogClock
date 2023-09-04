@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/vboxuser/projects/AnalogClock/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/AnalogClock.dir/src/main.cpp.o -c /home/vboxuser/projects/AnalogClock/src/main.cpp",
+  "file": "/home/vboxuser/projects/AnalogClock/src/main.cpp"
+},
+{
+  "directory": "/home/vboxuser/projects/AnalogClock/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/TEST.dir/src/test.cpp.o -c /home/vboxuser/projects/AnalogClock/src/test.cpp",
+  "file": "/home/vboxuser/projects/AnalogClock/src/test.cpp"
+}
+]
