@@ -1,1 +1,0 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/AnalogClock.dir/src/main.cpp.o CMakeFiles/AnalogClock.dir/src/AnalogClock.cpp.o CMakeFiles/AnalogClock.dir/src/ClockWindow.cpp.o -o AnalogClock  -lSDL2main -lSDL2 -lglut -lGL -lGLU 

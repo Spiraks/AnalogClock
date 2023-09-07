@@ -1,4 +1,0 @@
-/home/vboxuser/projects/AnalogClock/build/CMakeFiles/AnalogClock.dir
-/home/vboxuser/projects/AnalogClock/build/CMakeFiles/TEST.dir
-/home/vboxuser/projects/AnalogClock/build/CMakeFiles/edit_cache.dir
-/home/vboxuser/projects/AnalogClock/build/CMakeFiles/rebuild_cache.dir
