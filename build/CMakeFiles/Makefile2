@@ -83,12 +83,12 @@ clean: CMakeFiles/TEST.dir/clean
 CMakeFiles/AnalogClock.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnalogClock.dir/build.make CMakeFiles/AnalogClock.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnalogClock.dir/build.make CMakeFiles/AnalogClock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vboxuser/projects/AnalogClock/build/CMakeFiles --progress-num=1,2 "Built target AnalogClock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vboxuser/projects/AnalogClock/build/CMakeFiles --progress-num=1,2,3,4 "Built target AnalogClock"
 .PHONY : CMakeFiles/AnalogClock.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AnalogClock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/projects/AnalogClock/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/projects/AnalogClock/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AnalogClock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/projects/AnalogClock/build/CMakeFiles 0
 .PHONY : CMakeFiles/AnalogClock.dir/rule
@@ -109,12 +109,12 @@ CMakeFiles/AnalogClock.dir/clean:
 CMakeFiles/TEST.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vboxuser/projects/AnalogClock/build/CMakeFiles --progress-num=3,4 "Built target TEST"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vboxuser/projects/AnalogClock/build/CMakeFiles --progress-num=5,6,7,8 "Built target TEST"
 .PHONY : CMakeFiles/TEST.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TEST.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/projects/AnalogClock/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/projects/AnalogClock/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TEST.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/projects/AnalogClock/build/CMakeFiles 0
 .PHONY : CMakeFiles/TEST.dir/rule

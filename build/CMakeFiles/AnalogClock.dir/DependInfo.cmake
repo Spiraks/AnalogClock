@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/vboxuser/projects/AnalogClock/src/AnalogClock.cpp" "CMakeFiles/AnalogClock.dir/src/AnalogClock.cpp.o" "gcc" "CMakeFiles/AnalogClock.dir/src/AnalogClock.cpp.o.d"
+  "/home/vboxuser/projects/AnalogClock/src/ClockWindow.cpp" "CMakeFiles/AnalogClock.dir/src/ClockWindow.cpp.o" "gcc" "CMakeFiles/AnalogClock.dir/src/ClockWindow.cpp.o.d"
   "/home/vboxuser/projects/AnalogClock/src/main.cpp" "CMakeFiles/AnalogClock.dir/src/main.cpp.o" "gcc" "CMakeFiles/AnalogClock.dir/src/main.cpp.o.d"
   )
 

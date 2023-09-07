@@ -142,6 +142,60 @@ TEST/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/build
 .PHONY : TEST/fast
 
+src/AnalogClock.o: src/AnalogClock.cpp.o
+.PHONY : src/AnalogClock.o
+
+# target to build an object file
+src/AnalogClock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnalogClock.dir/build.make CMakeFiles/AnalogClock.dir/src/AnalogClock.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/src/AnalogClock.cpp.o
+.PHONY : src/AnalogClock.cpp.o
+
+src/AnalogClock.i: src/AnalogClock.cpp.i
+.PHONY : src/AnalogClock.i
+
+# target to preprocess a source file
+src/AnalogClock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnalogClock.dir/build.make CMakeFiles/AnalogClock.dir/src/AnalogClock.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/src/AnalogClock.cpp.i
+.PHONY : src/AnalogClock.cpp.i
+
+src/AnalogClock.s: src/AnalogClock.cpp.s
+.PHONY : src/AnalogClock.s
+
+# target to generate assembly for a file
+src/AnalogClock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnalogClock.dir/build.make CMakeFiles/AnalogClock.dir/src/AnalogClock.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/src/AnalogClock.cpp.s
+.PHONY : src/AnalogClock.cpp.s
+
+src/ClockWindow.o: src/ClockWindow.cpp.o
+.PHONY : src/ClockWindow.o
+
+# target to build an object file
+src/ClockWindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnalogClock.dir/build.make CMakeFiles/AnalogClock.dir/src/ClockWindow.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/src/ClockWindow.cpp.o
+.PHONY : src/ClockWindow.cpp.o
+
+src/ClockWindow.i: src/ClockWindow.cpp.i
+.PHONY : src/ClockWindow.i
+
+# target to preprocess a source file
+src/ClockWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnalogClock.dir/build.make CMakeFiles/AnalogClock.dir/src/ClockWindow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/src/ClockWindow.cpp.i
+.PHONY : src/ClockWindow.cpp.i
+
+src/ClockWindow.s: src/ClockWindow.cpp.s
+.PHONY : src/ClockWindow.s
+
+# target to generate assembly for a file
+src/ClockWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnalogClock.dir/build.make CMakeFiles/AnalogClock.dir/src/ClockWindow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.dir/build.make CMakeFiles/TEST.dir/src/ClockWindow.cpp.s
+.PHONY : src/ClockWindow.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -200,6 +254,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... AnalogClock"
 	@echo "... TEST"
+	@echo "... src/AnalogClock.o"
+	@echo "... src/AnalogClock.i"
+	@echo "... src/AnalogClock.s"
+	@echo "... src/ClockWindow.o"
+	@echo "... src/ClockWindow.i"
+	@echo "... src/ClockWindow.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
