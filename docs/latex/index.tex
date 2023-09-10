@@ -1,0 +1,144 @@
+\label{index_md__home_vboxuser_projects_AnalogClock_README}%
+\Hypertarget{index_md__home_vboxuser_projects_AnalogClock_README}%
+
+
+This is a simple analog clock project implemented in C++ using the SDL2 and Open\+GL libraries. It displays an analog clock with customizable attributes, including its position, size, time zone offset, and label.\hypertarget{index_autotoc_md1}{}\doxysection{Table of Contents}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item \href{\#analog-clock-project}{\texttt{ Analog Clock Project}}
+\begin{DoxyItemize}
+\item \href{\#table-of-contents}{\texttt{ Table of Contents}}
+\item \href{\#features}{\texttt{ Features}}
+\item \href{\#dependencies}{\texttt{ Dependencies}}
+\item \href{\#installation}{\texttt{ Installation}}
+\item \href{\#usage}{\texttt{ Usage}} 
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Features}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Displays an analog clock with hours, minutes, and seconds hands.
+\item Allows customization of the clock\textquotesingle{}s position, size, label, and time zone offset.
+\item Real-\/time clock updates based on the system time.
+\item Simple and clean C++ code.
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Dependencies}\label{index_autotoc_md3}
+This project relies on the following libraries\+:
+
+
+\begin{DoxyItemize}
+\item SDL2\+: Simple Direct\+Media Layer is a cross-\/platform development library designed to provide low-\/level access to audio, keyboard, mouse, joystick, and graphics hardware via Open\+GL.
+\item Open\+GL\+: The Open\+GL graphics rendering library.
+\item GLUT\+: The Open\+GL Utility Toolkit, used for bitmap character rendering.
+\end{DoxyItemize}
+
+Make sure you have these libraries installed on your system before compiling and running the project.\hypertarget{index_autotoc_md4}{}\doxysection{Installation}\label{index_autotoc_md4}
+To compile and run this project, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Clone this repository to your local machine\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone <repository\_url>}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Navigate to the project directory\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd AnalogClock}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Compile the project using a C++ compiler (e.\+g., g++)\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ -\/o analog\_clock main.cpp ClockWindow.cpp AnalogClock.cpp -\/lSDL2 -\/lGL -\/lglut}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Run the compiled executable\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./analog\_clock}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md5}{}\doxysection{Usage}\label{index_autotoc_md5}
+Upon running the program, you will see an analog clock window displaying the current time. The clock has a label indicating the time zone (default is \char`\"{}\+Moscow\char`\"{}).
+
+
+\begin{DoxyItemize}
+\item The clock hands represent the current time, with the hour hand in red, minute hand in gray, and second hand in white.
+\item The clock numbers are displayed around the dial, indicating hours 1 through 12.
+\item Here is the file structure {\ttfamily main.\+cpp} for a test run of your project\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <SDL2/SDL.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <GL/gl.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <GL/glut.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}AnalogClock.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}ClockWindow.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *args[])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// Initialize GLUT and SDL}}
+\DoxyCodeLine{    glutInit(\&argc, args);}
+\DoxyCodeLine{    SDL\_Init(SDL\_INIT\_VIDEO);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Create a ClockWindow and an AnalogClock}}
+\DoxyCodeLine{    \mbox{\hyperlink{classClockWindow}{ClockWindow}} clockWindow(800, 850);}
+\DoxyCodeLine{    \mbox{\hyperlink{classAnalogClock}{AnalogClock}} my\_clock(0, 250, 150, 3, \textcolor{stringliteral}{"{}Moscow"{}}, clockWindow);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} quit = \textcolor{keyword}{false};}
+\DoxyCodeLine{    SDL\_Event e;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Main loop}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while} (!quit)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{comment}{// Event handling}}
+\DoxyCodeLine{        \textcolor{keywordflow}{while} (SDL\_PollEvent(\&e) != 0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (e.type == SDL\_QUIT)}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                quit = \textcolor{keyword}{true};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Clear the rendering buffer}}
+\DoxyCodeLine{        clockWindow.Clear();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Draw the clock}}
+\DoxyCodeLine{        my\_clock.Draw();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Swap buffers for display}}
+\DoxyCodeLine{        clockWindow.SwapBuffers();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// Delay to control the clock update rate (in milliseconds)}}
+\DoxyCodeLine{        SDL\_Delay(1000);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Cleanup and exit}}
+\DoxyCodeLine{    SDL\_Quit();}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

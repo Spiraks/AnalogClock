@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Analog Clock: Main Page</title>
+<title>Analog Clock: Analog Clock Project</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Analog Clock
-   &#160;<span id="projectnumber">0.1.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -61,11 +61,120 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Analog Clock Documentation</div>  </div>
+<div class="title">Analog Clock Project </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__home_vboxuser_projects_AnalogClock_README"></a><img src="image.png" alt="Alt text" width="300" height="300" class="inline"/></p>
+<p>This is a simple analog clock project implemented in C++ using the SDL2 and OpenGL libraries. It displays an analog clock with customizable attributes, including its position, size, time zone offset, and label.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Table of Contents</h1>
+<ul>
+<li><a href="#analog-clock-project">Analog Clock Project</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a> </li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Features</h1>
+<ul>
+<li>Displays an analog clock with hours, minutes, and seconds hands.</li>
+<li>Allows customization of the clock's position, size, label, and time zone offset.</li>
+<li>Real-time clock updates based on the system time.</li>
+<li>Simple and clean C++ code.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Dependencies</h1>
+<p>This project relies on the following libraries:</p>
+<ul>
+<li>SDL2: Simple DirectMedia Layer is a cross-platform development library designed to provide low-level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL.</li>
+<li>OpenGL: The OpenGL graphics rendering library.</li>
+<li>GLUT: The OpenGL Utility Toolkit, used for bitmap character rendering.</li>
+</ul>
+<p>Make sure you have these libraries installed on your system before compiling and running the project.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Installation</h1>
+<p>To compile and run this project, follow these steps:</p>
+<ol type="1">
+<li>Clone this repository to your local machine:</li>
+</ol>
+<div class="fragment"><div class="line">git clone &lt;repository_url&gt;</div>
+</div><!-- fragment --><ol type="1">
+<li>Navigate to the project directory:</li>
+</ol>
+<div class="fragment"><div class="line">cd AnalogClock</div>
+</div><!-- fragment --><ol type="1">
+<li>Compile the project using a C++ compiler (e.g., g++):</li>
+</ol>
+<div class="fragment"><div class="line">g++ -o analog_clock main.cpp ClockWindow.cpp AnalogClock.cpp -lSDL2 -lGL -lglut</div>
+</div><!-- fragment --><ol type="1">
+<li>Run the compiled executable:</li>
+</ol>
+<div class="fragment"><div class="line">./analog_clock</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+Usage</h1>
+<p>Upon running the program, you will see an analog clock window displaying the current time. The clock has a label indicating the time zone (default is "Moscow").</p>
+<ul>
+<li>The clock hands represent the current time, with the hour hand in red, minute hand in gray, and second hand in white.</li>
+<li>The clock numbers are displayed around the dial, indicating hours 1 through 12.</li>
+<li>Here is the file structure <code>main.cpp</code> for a test run of your project:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;GL/gl.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;GL/glut.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;AnalogClock.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;ClockWindow.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *args[])</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Initialize GLUT and SDL</span></div>
+<div class="line">    glutInit(&amp;argc, args);</div>
+<div class="line">    SDL_Init(SDL_INIT_VIDEO);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create a ClockWindow and an AnalogClock</span></div>
+<div class="line">    <a class="code" href="classClockWindow.html">ClockWindow</a> clockWindow(800, 850);</div>
+<div class="line">    <a class="code" href="classAnalogClock.html">AnalogClock</a> my_clock(0, 250, 150, 3, <span class="stringliteral">&quot;Moscow&quot;</span>, clockWindow);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> quit = <span class="keyword">false</span>;</div>
+<div class="line">    SDL_Event e;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Main loop</span></div>
+<div class="line">    <span class="keywordflow">while</span> (!quit)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Event handling</span></div>
+<div class="line">        <span class="keywordflow">while</span> (SDL_PollEvent(&amp;e) != 0)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span> (e.type == SDL_QUIT)</div>
+<div class="line">            {</div>
+<div class="line">                quit = <span class="keyword">true</span>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Clear the rendering buffer</span></div>
+<div class="line">        clockWindow.Clear();</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Draw the clock</span></div>
+<div class="line">        my_clock.Draw();</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Swap buffers for display</span></div>
+<div class="line">        clockWindow.SwapBuffers();</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Delay to control the clock update rate (in milliseconds)</span></div>
+<div class="line">        SDL_Delay(1000);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Cleanup and exit</span></div>
+<div class="line">    SDL_Quit();</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassAnalogClock_html"><div class="ttname"><a href="classAnalogClock.html">AnalogClock</a></div><div class="ttdef"><b>Definition:</b> AnalogClock.h:10</div></div>
+<div class="ttc" id="aclassClockWindow_html"><div class="ttname"><a href="classClockWindow.html">ClockWindow</a></div><div class="ttdef"><b>Definition:</b> ClockWindow.h:6</div></div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
