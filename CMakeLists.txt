@@ -4,7 +4,7 @@ add_executable(AnalogClock src/main.cpp src/AnalogClock.cpp src/ClockWindow.cpp)
 target_link_libraries(AnalogClock SDL2main SDL2)
 target_link_libraries(AnalogClock glut GL GLU)
 add_executable(TEST src/test.cpp src/AnalogClock.cpp src/ClockWindow.cpp)
-target_link_libraries(TEST SDL2main SDL2 SDL2_image)
+target_link_libraries(TEST SDL2main SDL2)
 target_link_libraries(TEST glut GL GLU)
 
 
