@@ -4,6 +4,16 @@
 #include <GL/glut.h>
 #include "AnalogClock.h"
 
+/**
+ * @brief Constructor of the AnalogClock class.
+ *
+ * @param x X-coordinate of the clock center.
+ * @param y Y-coordinate of the clock center.
+ * @param radius The radius of the clock.
+ * @param gmt Timezone offset from GMT.
+ * @param label Label for the clock.
+ * @param clockWindow Reference to the window where the clock is displayed.
+ */
 AnalogClock::AnalogClock(int x,
                          int y,
                          int radius,
@@ -16,6 +26,9 @@ AnalogClock::AnalogClock(int x,
                                                      label_(label),
                                                      clockWindow_(clockWindow) {}
 
+/**
+ * @brief Draw the clock.
+ */
 void AnalogClock::Draw()
 {
     glPopMatrix();
@@ -38,11 +51,18 @@ void AnalogClock::Draw()
     DrawClockHand(-((hours % 12 * 30) + (minutes * 0.5)), radius_ * 0.5, radius_ * 0.035); // hours hand clock (hours - 30 degrees)
     glColor3f(1.0, 0.2, 0.2);
     DrawClockHand(-seconds * 6, radius_ * 0.85, radius_ * 0.015); // seconds hand clock
-    
+
     glPushMatrix();
     glFlush();
 }
 
+/**
+ * @brief Draw a clock hand.
+ *
+ * @param angle Rotation angle of the clock hand.
+ * @param length Length of the clock hand.
+ * @param weight Thickness of the clock hand.
+ */
 void AnalogClock::DrawClockHand(int angle, float length, float weight)
 {
     glPushMatrix();
@@ -61,6 +81,16 @@ void AnalogClock::DrawClockHand(int angle, float length, float weight)
     glPopMatrix();
 }
 
+/**
+ * @brief Draw a circle.
+ *
+ * @param angleBegin Starting angle of the arc.
+ * @param angleEnd Ending angle of the arc.
+ * @param x X-coordinate of the circle center.
+ * @param y Y-coordinate of the circle center.
+ * @param r Radius of the circle.
+ * @param typeDraw Type of drawing (GL_TRIANGLE_FAN, GL_LINE_LOOP, etc.).
+ */
 void AnalogClock::DrawCircle(int angleBegin, int angleEnd, int x, int y, int r, int typeDraw)
 {
     glBegin(typeDraw);
@@ -74,6 +104,9 @@ void AnalogClock::DrawCircle(int angleBegin, int angleEnd, int x, int y, int r, 
     glEnd();
 }
 
+/**
+ * @brief Draw numbers on the clock face.
+ */
 void AnalogClock::DrawNumber(){
     for (int i = 1; i <= 12; ++i)
     {
@@ -81,7 +114,7 @@ void AnalogClock::DrawNumber(){
         float x = radius_ * 0.85 * sin(radian);
         float y = radius_ * 0.85 * cos(radian);
         char numerical[3];
-        snprintf(numerical, sizeof(numerical), "%2d", i); // Formated number
+        snprintf(numerical, sizeof(numerical), "%2d", i); // Formatted number
         if (i < 10)
             glRasterPos2f(x - 7, y - 7);
         else
@@ -94,6 +127,9 @@ void AnalogClock::DrawNumber(){
     }
 }
 
+/**
+ * @brief Draw a label below the clock.
+ */
 void AnalogClock::DrawLabel(){
     glColor3f(1.0, 1.0, 1.0);
     int size = label_.size();
@@ -104,6 +140,9 @@ void AnalogClock::DrawLabel(){
     }
 }
 
+/**
+ * @brief Draw the clock face.
+ */
 void AnalogClock::DrawDial()
 {
     glColor3ub(195, 196, 198);
